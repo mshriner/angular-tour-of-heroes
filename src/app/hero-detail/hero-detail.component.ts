@@ -58,7 +58,7 @@ export class HeroDetailComponent implements OnInit {
       // do not subscribe if no number provided
       this.heroService
         .getHeroNo404(id)
-        .subscribe((hero) => this.heroForm.patchValue(hero));
+        .subscribe((hero) => (hero ? this.heroForm.patchValue(hero) : 0));
     }
   }
 
